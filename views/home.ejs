@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="header">
+                    <a href="" class="link home-link">Home</a>
+                </div>
+                
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            
+            <div class="ui container">
+                <form action="/add" class="ui form" method="post">
+                    <div class="ui seven fields">
+                        <div class="field">
+                            <label for="nama" class="ui header blue">Nama</label>
+                            <input type="text" placeholder="Nama anda" name="nama" class="nama">
+                        </div>
+                        <div class="field">
+                            <label for="nim" class="ui header blue">NIM</label>
+                            <input type="text" placeholder="NIM anda" name="nim" class="nim">
+                        </div>
+                        <div class="field">
+                            <label for="jurusan" class="ui header blue">Jurusan</label>
+                            <input type="text" placeholder="Jurusan anda" name="jurusan" class="jurusan">
+                        </div>
+                        <div class="field">
+                            <label for="email" class="ui header blue">Email</label>
+                            <input type="text" placeholder="Alamat email anda" name="email" class="email">
+                        </div>
+                        <div class="field">
+                            <label for="nomorHp" class="ui header blue">Nomor Handphone</label>
+                            <input type="text" placeholder="Nomor Hp anda" name="nomorHp" class="nomorHp">
+                        </div>
+                        <div class="field">
+                            <label for="asal" class="ui header blue">Asal Kota</label>
+                            <input type="text" placeholder="Asal kota anda" name="asal" class="asal">
+                        </div>
+                        <div class="field">
+                            <label for="jenisKelamin" class="ui header blue">Jenis Kelamin</label>
+                            <input type="text" placeholder="Laki-laki/Perempuan" ="jenisKelamin" class="jenisKelamin">
+                        </div>
+    
+                    </div>
+                    <div class="ui fluid field">
+                        <input type="submit" value="Save" class="ui button blue fluid">
+                    </div>
+                </form>
+
+                <br><br>
+
+                <table class="ui table blue">
+                    <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>Nama</th>
+                            <th>NIM</th>
+                            <th>Jurusan</th>
+                            <th>Email</th>
+                            <th>Nomor Hp</th>
+                            <th>Asal</th>
+                            <th>Jenis Kelamin</th>
+                            <th>Edit</th>
+                            <th>Hapus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% mahasiswas.forEach((Mahasiswa, index) => { %>
+                            <tr>
+                                <td><%- (index + 1) + '.' %></td>
+                                <td><%- Mahasiswa.nama %></td>
+                                <td><%- Mahasiswa.nim %></td>
+                                <td><%- Mahasiswa.jurusan %></td>
+                                <td><%- Mahasiswa.email %></td>
+                                <td><%- Mahasiswa.nomorHp %></td>
+                                <td><%- Mahasiswa.asal %></td>
+                                <td><%- Mahasiswa.jenisKelamin %></td>
+                                <td><a class="ui blue button" href="/edit/<%= Mahasiswa._id %>="><i class="edit outline icon"></i></a></td>
+                                <td><a class="ui red button" href="/delete/<%= Mahasiswa._id %>"><i class="trash icon"></i></a></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>                    
+                </table>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/public/js/semantic.min.js"></script>
+</body>
+</html>

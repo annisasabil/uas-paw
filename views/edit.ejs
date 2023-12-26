@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="ui massive menu">
+            <div class="ui container">
+                <div class="header item">
+                    <a href="" class="link">Home</a>
+                </div>
+                  <a class="item">
+                    Contact
+                  </a>
+                  <a class="item">
+                    Location
+                  </a>
+                  <a class="item">
+                    About
+                  </a>
+                  </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+            
+            <div class="ui container">
+                <form action="/edit/<%- Mahasiswa._id %>" class="ui form" method="post">
+                    <div class="ui seven fields">
+                        <div class="field">
+                            <label for="nama" class="ui header blue">Nama</label>
+                            <input type="text" placeholder="Nama anda" name="nama" class="nama" value="<%- Mahasiswa.nama %>" id="nama">
+                        </div>
+                        <div class="field">
+                            <label for="nim" class="ui header blue">NIM</label>
+                            <input type="text" placeholder="NIM anda" name="nim" class="nim" value="<%- Mahasiswa.nim %>" id="nim">
+                        </div>
+                        <div class="field">
+                            <label for="jurusan" class="ui header blue">Jurusan</label>
+                            <input type="text" placeholder="Jurusan anda" name="jurusan" class="jurusan" value="<%- Mahasiswa.jurusan %>" id="jurusan">
+                        </div>
+                        <div class="field">
+                            <label for="email" class="ui header blue">Email</label>
+                            <input type="text" placeholder="Alamat email anda" name="email" class="email"value="<%- Mahasiswa.email %>" id="email" >
+                        </div>
+                        <div class="field">
+                            <label for="nomorHp" class="ui header blue">Nomor Handphone</label>
+                            <input type="text" placeholder="Nomor Hp anda" name="nomorHp" class="nomorHp" value="<%- Mahasiswa.nomorHp %>" id="nomorHp">
+                        </div>
+                        <div class="field">
+                            <label for="asal" class="ui header blue">Asal Kota</label>
+                            <input type="text" placeholder="Asal kota anda" name="asal" class="asal" value="<%- Mahasiswa.asal %>" id="asal">
+                        </div>
+                        <div class="field">
+                            <label for="jenisKelamin" class="ui header blue">Jenis Kelamin</label>
+                            <input type="text" placeholder="Laki-laki/Perempuan" name="jenisKelamin" class="jenisKelamin" value="<%- Mahasiswa.jenisKelamin %>" id="jenisKelamin">
+                        </div>
+                    </div>
+                    <div class="ui fluid field">
+                        <input type="submit" value="Save" class="ui button blue fluid">
+                    </div>
+                </form>
+
+                <br><br>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/public/js/semantic.min.js"></script>
+</body>
+</html>
