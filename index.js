@@ -2,11 +2,11 @@ const express = require('express');
 const homeRoute = require('./routes/home');
 const mongoose = require('mongoose');
 const app = express();
-const port = process.env.port || 5000;
+const port = 5000;
+const uri = 'mongodb+srv://annisasabila20:2IT0ComOQdQ9UkFW@praktikumweb.jg5kpx2.mongodb.net/?authSource=PraktikumWeb&authMechanism=SCRAM-SHA-1';
 const bodyParser = require('body-parser');
-require('dotenv').config();
 
-mongoose.connect(process.env.MONGO_URI, { 
+mongoose.connect(uri, { 
     useNewUrlParser: true, 
     useUnifiedTopology: true 
 });
