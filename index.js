@@ -3,7 +3,7 @@ const homeRoute = require('./routes/home');
 const mongoose = require('mongoose');
 const app = express();
 const port = 5000;
-const uri = 'mongodb://127.0.0.1:27017/uas';
+const uri = 'mongodb+srv://annisasabila20:2IT0ComOQdQ9UkFW@praktikumweb.jg5kpx2.mongodb.net/?authSource=PraktikumWeb&authMechanism=SCRAM-SHA-1';
 const bodyParser = require('body-parser');
 
 mongoose.connect(uri, { 
