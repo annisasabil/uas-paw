@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 5000; 
 const bodyParser = require('body-parser');
+const path = require ('path');
 require('dotenv').config();
 
 const MONGO_URI = process.env.MONGO_URI;
@@ -20,9 +21,11 @@ db.once('open',() => {
 });
 
 app.set('view engine', 'ejs');
+app.set('views', path.join(path.resolve(), 'views'));
 app.use(express.static('public'));
 
 app.use(bodyParser.urlencoded({extended:false}));
+app.use(express.static(path.join(path.resolve(), 'public')));
 app.use(bodyParser.json());
 
 app.use('/', homeRoute)
